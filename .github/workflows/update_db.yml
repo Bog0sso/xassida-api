@@ -22,7 +22,7 @@ jobs:
         run: |
           matched_files=$(echo '${{ steps.file_changes.outputs.files }}')
           files=$(echo "$matched_files" | jq -r '.[]')
-          echo "XASSIDAS=$files" >> $GITHUB_ENV
+          echo "XASSIDAS='$files'" >> $GITHUB_ENV
 
       - name: Run insertion playbook
         uses: dawidd6/action-ansible-playbook@v2
